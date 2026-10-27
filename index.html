@@ -1,0 +1,1708 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102f39">
+    <meta
+      name="description"
+      content="Автомойка «Волна» в Новороссийске. Услуги и цены, адрес и связь в Telegram."
+    >
+    <title>Автомойка «Волна» — Новороссийск</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        --ink: #102f39;
+        --muted: #62777b;
+        --teal: #b7eee0;
+        --paper: #f5f8f5;
+        --line: #dce8e3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 570px;
+        background:
+          radial-gradient(ellipse at 82% 18%, rgb(91 171 157 / 24%), transparent 34%),
+          linear-gradient(135deg, #102f39 0%, #164951 58%, #1d5b5c 100%);
+        color: #fff;
+      }
+
+      .hero::before {
+        position: absolute;
+        top: -40%;
+        left: -20%;
+        width: 75%;
+        height: 130%;
+        border-radius: 50%;
+        background: radial-gradient(ellipse, rgb(183 238 224 / 9%), transparent 68%);
+        content: "";
+        pointer-events: none;
+        animation: drift 12s ease-in-out infinite alternate;
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -100px;
+        bottom: -260px;
+        width: 540px;
+        height: 540px;
+        border: 1px solid rgb(183 238 224 / 16%);
+        border-radius: 50%;
+        box-shadow: 0 0 0 38px rgb(183 238 224 / 4%), 0 0 0 82px rgb(183 238 224 / 4%);
+        content: "";
+        pointer-events: none;
+        animation: orbit 26s linear infinite;
+      }
+
+      @keyframes drift {
+        to {
+          transform: translate(22%, 12%) scale(1.16);
+        }
+      }
+
+      @keyframes orbit {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes float {
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      @keyframes appear {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: #fff;
+        font-size: 19px;
+        font-weight: 750;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+        transition: opacity 160ms ease;
+      }
+
+      .brand:hover {
+        opacity: 0.8;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 1px solid rgb(183 238 224 / 52%);
+        border-radius: 13px;
+        color: var(--teal);
+        font-size: 21px;
+        transition: transform 220ms ease;
+      }
+
+      .brand:hover .brand-mark {
+        transform: rotate(-10deg);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 14px;
+      }
+
+      .nav a {
+        color: rgb(255 255 255 / 78%);
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: #fff;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 0.72fr;
+        align-items: center;
+        gap: 52px;
+        padding: 72px 0 104px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--teal);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 650px;
+        margin: 0;
+        font-size: clamp(42px, 6vw, 72px);
+        letter-spacing: -0.065em;
+        line-height: 0.99;
+      }
+
+      .hero-copy {
+        max-width: 450px;
+        margin: 23px 0 0;
+        color: rgb(255 255 255 / 76%);
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: var(--teal);
+        color: var(--ink);
+      }
+
+      .button-secondary {
+        border-color: rgb(255 255 255 / 24%);
+        color: #fff;
+      }
+
+      .hero-card {
+        position: relative;
+        padding: 30px;
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 25px;
+        background: rgb(255 255 255 / 8%);
+        backdrop-filter: blur(8px);
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .hero-card-label {
+        margin: 0 0 22px;
+        color: rgb(255 255 255 / 63%);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero-card-price {
+        margin: 0;
+        font-size: clamp(34px, 4vw, 48px);
+        font-weight: 750;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-card-service {
+        margin: 5px 0 22px;
+        color: rgb(255 255 255 / 82%);
+        font-size: 15px;
+      }
+
+      .hero-card-note {
+        margin: 0;
+        padding-top: 18px;
+        border-top: 1px solid rgb(255 255 255 / 16%);
+        color: rgb(255 255 255 / 65%);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      main {
+        padding: 84px 0 92px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+
+      .section-heading .eyebrow {
+        margin-bottom: 11px;
+        color: #438d7d;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 42px);
+        letter-spacing: -0.055em;
+      }
+
+      .section-note {
+        max-width: 330px;
+        margin: 0 0 3px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .service {
+        position: relative;
+        overflow: hidden;
+        min-height: 190px;
+        padding: 23px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        cursor: pointer;
+        transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      }
+
+      .service:hover,
+      .service:focus-visible,
+      .service[aria-pressed="true"] {
+        transform: translateY(-5px);
+        border-color: #83c8b7;
+        box-shadow: 0 14px 32px rgb(16 47 57 / 9%);
+        outline: none;
+      }
+
+      .service::after {
+        position: absolute;
+        right: -32px;
+        bottom: -48px;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background: rgb(183 238 224 / 0%);
+        content: "";
+        transition: transform 240ms ease, background 240ms ease;
+      }
+
+      .service:hover::after,
+      .service:focus-visible::after,
+      .service[aria-pressed="true"]::after {
+        transform: scale(1.5);
+        background: rgb(183 238 224 / 38%);
+      }
+
+      .service-prompt {
+        display: block;
+        margin-top: 15px;
+        color: #438d7d;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .service-number {
+        display: inline-grid;
+        width: 35px;
+        height: 35px;
+        place-items: center;
+        border-radius: 12px;
+        background: #e8f4ef;
+        color: #367f70;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .service h3 {
+        margin: 25px 0 9px;
+        font-size: 16px;
+        letter-spacing: -0.025em;
+      }
+
+      .price {
+        margin: 0;
+        color: #347d6e;
+        font-size: 18px;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 76px;
+      }
+
+      .contact-card {
+        padding: 30px;
+        border-radius: 22px;
+        background: #e7f2ed;
+      }
+
+      .contact-card h2 {
+        margin-bottom: 22px;
+        font-size: 27px;
+      }
+
+      .contact-detail {
+        margin: 0 0 7px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .contact-value {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .contact-card .button {
+        margin-top: 22px;
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .contact-card-light {
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+
+      .contact-card-light .button {
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .booking {
+        margin-top: 76px;
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+      }
+
+      .booking .section-heading {
+        margin-bottom: 25px;
+      }
+
+      .booking-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+      }
+
+      .form-field {
+        display: grid;
+        align-content: start;
+        gap: 8px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .form-field-wide {
+        grid-column: 1 / -1;
+      }
+
+      .form-input {
+        width: 100%;
+        min-height: 48px;
+        padding: 11px 13px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fbfdfb;
+        color: var(--ink);
+        font: inherit;
+        font-size: 15px;
+      }
+
+      .form-input:focus-visible {
+        outline: 2px solid #438d7d;
+        outline-offset: 2px;
+      }
+
+      .booking .button {
+        justify-self: start;
+        min-height: 50px;
+        padding: 0 22px;
+        border: 0;
+        background: var(--ink);
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-size: 14px;
+      }
+
+      .booking-note {
+        grid-column: 1 / -1;
+        max-width: 650px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .booking-price {
+        grid-column: 1 / -1;
+        margin: -4px 0 0;
+        color: #347d6e;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 600ms ease, transform 600ms ease;
+      }
+
+      .js .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hero-content > div:first-child {
+        animation: appear 700ms ease both;
+      }
+
+      .hero-card {
+        animation: appear 800ms 120ms ease both, float 5s 800ms ease-in-out infinite;
+      }
+
+      footer {
+        padding: 24px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 800px) {
+        .hero-content {
+          grid-template-columns: 1fr 0.75fr;
+          gap: 28px;
+          padding: 62px 0 82px;
+        }
+
+        .hero-card {
+          padding: 24px;
+        }
+
+        .services {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        .wrap {
+          width: min(100% - 36px, 440px);
+        }
+
+        .hero {
+          min-height: 0;
+        }
+
+        .topbar {
+          padding: 19px 0;
+        }
+
+        .brand {
+          font-size: 17px;
+        }
+
+        .brand-mark {
+          width: 35px;
+          height: 35px;
+        }
+
+        .nav {
+          gap: 14px;
+          font-size: 13px;
+        }
+
+        .nav a:first-child {
+          display: none;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 34px;
+          padding: 58px 0 70px;
+        }
+
+        h1 {
+          font-size: clamp(44px, 14vw, 62px);
+        }
+
+        .hero-copy {
+          margin-top: 17px;
+          font-size: 15px;
+        }
+
+        .actions {
+          margin-top: 25px;
+        }
+
+        .button {
+          min-height: 48px;
+          padding: 0 16px;
+        }
+
+        .hero-card {
+          max-width: 360px;
+        }
+
+        main {
+          padding: 64px 0;
+        }
+
+        .section-heading {
+          display: block;
+          margin-bottom: 22px;
+        }
+
+        .section-note {
+          margin-top: 12px;
+        }
+
+        .services {
+          gap: 10px;
+        }
+
+        .service {
+          min-height: 166px;
+          padding: 17px;
+        }
+
+        .service h3 {
+          min-height: 38px;
+          margin: 19px 0 8px;
+          font-size: 14px;
+          line-height: 1.35;
+        }
+
+        .price {
+          font-size: 16px;
+        }
+
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin-top: 54px;
+        }
+
+        .contact-card {
+          padding: 24px;
+        }
+
+        .booking {
+          margin-top: 54px;
+          padding: 22px 18px;
+        }
+
+        .booking-form {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .form-field-wide,
+        .booking-note {
+          grid-column: auto;
+        }
+
+        .booking-price {
+          grid-column: auto;
+        }
+
+        .booking .button {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .js .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      :root {
+        --ink: #17241f;
+        --muted: #78827a;
+        --teal: #d7fb68;
+        --paper: #f7f7f2;
+        --line: #e4e6dc;
+      }
+
+      html {
+        scroll-padding-top: 24px;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .wrap {
+        width: min(1200px, calc(100% - 64px));
+      }
+
+      .hero {
+        min-height: 0;
+        background:
+          radial-gradient(ellipse at 82% 50%, rgb(91 171 157 / 12%), transparent 37%),
+          #17241f;
+      }
+
+      .hero::before {
+        top: -60%;
+        left: 36%;
+        width: 76%;
+        background: radial-gradient(ellipse, rgb(215 251 104 / 9%), transparent 67%);
+      }
+
+      .hero::after {
+        right: 2%;
+        bottom: -420px;
+        width: 620px;
+        height: 620px;
+        border-color: rgb(215 251 104 / 12%);
+        box-shadow: 0 0 0 34px rgb(215 251 104 / 3%), 0 0 0 76px rgb(215 251 104 / 3%);
+      }
+
+      .topbar {
+        padding: 24px 0;
+      }
+
+      .brand {
+        gap: 12px;
+        font-size: 20px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border: 0;
+        border-radius: 15px;
+        background: var(--teal);
+        color: var(--ink);
+        font-size: 22px;
+      }
+
+      .nav {
+        gap: 8px;
+      }
+
+      .nav a {
+        padding: 11px 15px;
+        border-radius: 999px;
+        transition: background 180ms ease, color 180ms ease;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: rgb(255 255 255 / 10%);
+        color: #fff;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr 1.06fr;
+        gap: clamp(24px, 5vw, 72px);
+        padding: 68px 0 88px;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+      }
+
+      .hero-content .eyebrow::before {
+        width: 22px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1 {
+        max-width: 610px;
+        font-size: clamp(48px, 6.4vw, 82px);
+        letter-spacing: -0.075em;
+        line-height: 0.98;
+      }
+
+      .hero-copy {
+        max-width: 400px;
+        margin-top: 22px;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .actions {
+        gap: 10px;
+        margin-top: 29px;
+      }
+
+      .button {
+        min-height: 54px;
+        padding: 0 23px;
+        border-radius: 999px;
+        transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: var(--teal);
+        box-shadow: 0 8px 26px rgb(215 251 104 / 15%);
+      }
+
+      .button-primary:hover {
+        background: #e3ff91;
+      }
+
+      .button-secondary {
+        border-color: rgb(255 255 255 / 22%);
+      }
+
+      .hero-visual {
+        position: relative;
+        display: grid;
+        min-height: 450px;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: 32px;
+        background:
+          radial-gradient(ellipse at 50% 44%, rgb(115 159 99 / 23%), transparent 43%),
+          linear-gradient(145deg, #273c33, #1d2b25 72%);
+        isolation: isolate;
+      }
+
+      .hero-visual::before,
+      .hero-visual::after {
+        position: absolute;
+        z-index: -1;
+        border: 1px solid rgb(255 255 255 / 9%);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .hero-visual::before {
+        inset: 9% 8%;
+      }
+
+      .hero-visual::after {
+        inset: 17% 15%;
+        border-color: rgb(215 251 104 / 14%);
+      }
+
+      .car-art {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        filter: drop-shadow(0 26px 26px rgb(0 0 0 / 25%));
+        animation: car-float 5s ease-in-out infinite;
+      }
+
+      @keyframes car-float {
+        50% {
+          transform: translateY(-7px);
+        }
+      }
+
+      .visual-label {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 13px;
+        border: 1px solid rgb(255 255 255 / 13%);
+        border-radius: 999px;
+        background: rgb(23 36 31 / 55%);
+        color: rgb(255 255 255 / 82%);
+        font-size: 11px;
+        backdrop-filter: blur(8px);
+      }
+
+      .visual-label::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--teal);
+        content: "";
+      }
+
+      .hero-card {
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        min-width: 210px;
+        padding: 17px 19px;
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 18px;
+        background: rgb(247 247 242 / 94%);
+        color: var(--ink);
+        box-shadow: 0 14px 40px rgb(0 0 0 / 19%);
+        backdrop-filter: blur(10px);
+        animation: none;
+      }
+
+      .hero-card-label {
+        margin: 0 0 6px;
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+      }
+
+      .hero-card-price {
+        font-size: 29px;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-card-service {
+        margin: 2px 0 0;
+        color: #58625a;
+        font-size: 12px;
+      }
+
+      .hero-card-note {
+        display: none;
+      }
+
+      main {
+        padding: 92px 0 90px;
+      }
+
+      .section-heading {
+        margin-bottom: 27px;
+      }
+
+      .section-heading .eyebrow {
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 4vw, 47px);
+        letter-spacing: -0.065em;
+      }
+
+      .services {
+        gap: 14px;
+      }
+
+      .service {
+        min-height: 210px;
+        padding: 23px;
+        border-color: #e9e9df;
+        border-radius: 21px;
+        background: #fff;
+        box-shadow: 0 4px 16px rgb(23 36 31 / 3%);
+      }
+
+      .service:hover,
+      .service:focus-visible,
+      .service[aria-pressed="true"] {
+        transform: translateY(-4px);
+        border-color: #bbd66d;
+        box-shadow: 0 16px 34px rgb(23 36 31 / 8%);
+      }
+
+      .service-number {
+        width: 42px;
+        height: 42px;
+        border-radius: 15px;
+        background: #f0f3e8;
+        color: #53613d;
+      }
+
+      .service h3 {
+        position: relative;
+        z-index: 1;
+        min-height: 38px;
+        margin: 22px 0 8px;
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .price {
+        position: relative;
+        z-index: 1;
+        color: #485d2e;
+        font-size: 20px;
+      }
+
+      .service-prompt {
+        position: relative;
+        z-index: 1;
+        margin-top: 14px;
+        color: #818a75;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .contact {
+        gap: 14px;
+        margin-top: 72px;
+      }
+
+      .contact-card {
+        padding: clamp(24px, 4vw, 38px);
+        border: 1px solid transparent;
+        border-radius: 25px;
+        background: #edf0e3;
+      }
+
+      .contact-card-light {
+        border-color: #e9e9df;
+        background: #fff;
+      }
+
+      .contact-card h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+
+      .contact-detail {
+        margin-bottom: 10px;
+        color: #79826f;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .contact-value {
+        font-size: 16px;
+      }
+
+      .contact-card .button {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .contact-card-light .button {
+        border-color: #e1e4d8;
+        color: var(--ink);
+      }
+
+      .booking {
+        margin-top: 72px;
+        padding: clamp(24px, 4vw, 42px);
+        border: 0;
+        border-radius: 28px;
+        background:
+          radial-gradient(ellipse at 95% 0%, rgb(215 251 104 / 12%), transparent 35%),
+          #17241f;
+        color: #fff;
+      }
+
+      .booking .section-heading .eyebrow {
+        color: var(--teal);
+      }
+
+      .booking .section-note {
+        color: rgb(255 255 255 / 63%);
+      }
+
+      .booking-form {
+        gap: 16px;
+      }
+
+      .form-field {
+        color: rgb(255 255 255 / 79%);
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .form-input {
+        min-height: 52px;
+        padding: 12px 15px;
+        border-color: rgb(255 255 255 / 12%);
+        border-radius: 13px;
+        background: rgb(255 255 255 / 7%);
+        color: #fff;
+        color-scheme: dark;
+      }
+
+      .form-input:focus-visible {
+        outline-color: var(--teal);
+      }
+
+      .form-input option {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .booking-price {
+        color: var(--teal);
+        font-size: 14px;
+      }
+
+      .booking-note {
+        color: rgb(255 255 255 / 57%);
+      }
+
+      .booking .button {
+        min-height: 53px;
+        padding: 0 24px;
+        border-radius: 999px;
+        background: var(--teal);
+        color: var(--ink);
+      }
+
+      footer {
+        padding: 25px 0;
+        border-top-color: #e8e9e0;
+      }
+
+      .mobile-booking {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .hero-content {
+          grid-template-columns: 1fr 0.92fr;
+          gap: 28px;
+          padding: 56px 0 72px;
+        }
+
+        h1 {
+          font-size: clamp(48px, 6vw, 67px);
+        }
+
+        .hero-visual {
+          min-height: 365px;
+        }
+
+        .hero-card {
+          right: 13px;
+          bottom: 13px;
+          min-width: 185px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        html {
+          scroll-padding-top: 12px;
+        }
+
+        body {
+          padding-bottom: calc(76px + env(safe-area-inset-bottom));
+        }
+
+        .wrap {
+          width: calc(100% - 36px);
+        }
+
+        .hero {
+          min-height: 0;
+        }
+
+        .topbar {
+          padding: 16px 0;
+        }
+
+        .brand {
+          gap: 9px;
+          font-size: 17px;
+        }
+
+        .brand-mark {
+          width: 37px;
+          height: 37px;
+          border-radius: 13px;
+        }
+
+        .nav {
+          gap: 2px;
+          font-size: 11px;
+        }
+
+        .nav a {
+          padding: 9px 10px;
+        }
+
+        .nav a:first-child {
+          display: none;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 27px;
+          padding: 43px 0 35px;
+        }
+
+        .eyebrow {
+          margin-bottom: 14px;
+          font-size: 10px;
+        }
+
+        h1 {
+          max-width: 480px;
+          font-size: clamp(47px, 13vw, 66px);
+          line-height: 0.98;
+        }
+
+        .hero-copy {
+          max-width: 390px;
+          margin-top: 17px;
+          font-size: 14px;
+          line-height: 1.65;
+        }
+
+        .actions {
+          gap: 9px;
+          margin-top: 22px;
+        }
+
+        .button {
+          min-height: 49px;
+          padding: 0 17px;
+          font-size: 13px;
+        }
+
+        .hero-visual {
+          min-height: clamp(260px, 74vw, 350px);
+          border-radius: 24px;
+        }
+
+        .visual-label {
+          top: 13px;
+          left: 13px;
+          padding: 8px 10px;
+          font-size: 9px;
+        }
+
+        .hero-card {
+          right: 11px;
+          bottom: 11px;
+          min-width: 166px;
+          padding: 12px 14px;
+          border-radius: 15px;
+        }
+
+        .hero-card-price {
+          font-size: 25px;
+        }
+
+        .hero-card-service {
+          font-size: 11px;
+        }
+
+        main {
+          padding: 57px 0 62px;
+        }
+
+        .section-heading {
+          display: block;
+          margin-bottom: 20px;
+        }
+
+        .section-heading .eyebrow {
+          margin-bottom: 9px;
+        }
+
+        h2 {
+          font-size: clamp(31px, 9vw, 39px);
+        }
+
+        .section-note {
+          margin-top: 9px;
+          font-size: 13px;
+        }
+
+        .services {
+          grid-template-columns: 1fr 1fr;
+          gap: 9px;
+        }
+
+        .service {
+          min-height: 176px;
+          padding: 15px;
+          border-radius: 17px;
+        }
+
+        .service-number {
+          width: 36px;
+          height: 36px;
+          border-radius: 12px;
+          font-size: 11px;
+        }
+
+        .service h3 {
+          min-height: 39px;
+          margin: 18px 0 8px;
+          font-size: 13px;
+          line-height: 1.4;
+        }
+
+        .price {
+          font-size: 16px;
+        }
+
+        .service-prompt {
+          margin-top: 11px;
+          font-size: 10px;
+        }
+
+        .booking {
+          margin-top: 48px;
+          padding: 23px 18px;
+          border-radius: 22px;
+        }
+
+        .booking-form {
+          grid-template-columns: 1fr;
+          gap: 13px;
+        }
+
+        .form-field-wide,
+        .booking-note,
+        .booking-price {
+          grid-column: auto;
+        }
+
+        .form-input {
+          min-height: 50px;
+          font-size: 16px;
+        }
+
+        .booking-note {
+          font-size: 12px;
+        }
+
+        .booking .button {
+          width: 100%;
+        }
+
+        .contact {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-top: 48px;
+        }
+
+        .contact-card {
+          padding: 23px;
+          border-radius: 20px;
+        }
+
+        .contact-card h2 {
+          margin-bottom: 15px;
+          font-size: 26px;
+        }
+
+        .contact-card .button {
+          margin-top: 18px;
+        }
+
+        footer {
+          padding: 19px 0;
+          font-size: 12px;
+        }
+
+        .mobile-booking {
+          position: fixed;
+          z-index: 5;
+          right: 13px;
+          bottom: calc(12px + env(safe-area-inset-bottom));
+          left: 13px;
+          display: flex;
+          min-height: 54px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 19px;
+          border-radius: 999px;
+          background: var(--teal);
+          color: var(--ink);
+          box-shadow: 0 8px 28px rgb(23 36 31 / 20%);
+          font-size: 14px;
+          font-weight: 750;
+          text-decoration: none;
+        }
+
+        .mobile-booking span {
+          display: grid;
+          width: 31px;
+          height: 31px;
+          place-items: center;
+          border-radius: 50%;
+          background: var(--ink);
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .wrap {
+          width: calc(100% - 28px);
+        }
+
+        .nav a {
+          padding: 8px;
+          font-size: 10px;
+        }
+
+        .service {
+          padding: 13px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero::before,
+        .hero::after,
+        .car-art {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="topbar">
+          <a class="brand" href="#" aria-label="Автомойка Волна — на главную">
+            <span class="brand-mark" aria-hidden="true">≈</span>
+            <span>Волна</span>
+          </a>
+          <nav class="nav" aria-label="Основная навигация">
+            <a href="#services">Услуги и цены</a>
+            <a href="#booking">Запись</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+        </div>
+
+        <div class="hero-content">
+          <div>
+            <p class="eyebrow">Автомойка · Новороссийск</p>
+            <h1>Мойка и уход<br>для вашего авто.</h1>
+            <p class="hero-copy">
+              Внешняя мойка, салон и детейлинг в Новороссийске. Выберите услугу и отправьте
+              заявку напрямую в Telegram.
+            </p>
+            <div class="actions">
+              <a class="button button-primary" href="#booking">Записаться</a>
+              <a class="button button-secondary" href="#services">Услуги и цены</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Иллюстрация автомобиля в каплях воды">
+            <span class="visual-label">Новороссийск · Видова, 146</span>
+            <svg class="car-art" viewBox="0 0 640 440" role="img" aria-labelledby="car-title car-desc">
+              <title id="car-title">Автомобиль и капли воды</title>
+              <desc id="car-desc">Авторская иллюстрация автомобиля на фоне волн и мыльных пузырей.</desc>
+              <defs>
+                <linearGradient id="car-paint" x1="0" x2="0.9" y1="0" y2="1">
+                  <stop offset="0" stop-color="#f8f6df"/>
+                  <stop offset="0.55" stop-color="#dce8ca"/>
+                  <stop offset="1" stop-color="#a8bd91"/>
+                </linearGradient>
+                <linearGradient id="window-glass" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#9bb5a1"/>
+                  <stop offset="1" stop-color="#354c40"/>
+                </linearGradient>
+                <linearGradient id="ground-glow" x1="0" x2="1">
+                  <stop offset="0" stop-color="#d7fb68" stop-opacity="0"/>
+                  <stop offset="0.5" stop-color="#d7fb68" stop-opacity="0.64"/>
+                  <stop offset="1" stop-color="#d7fb68" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <circle cx="488" cy="104" r="67" fill="#d7fb68" opacity=".12"/>
+              <circle cx="488" cy="104" r="47" fill="none" stroke="#d7fb68" stroke-opacity=".35"/>
+              <circle cx="126" cy="166" r="24" fill="#c6ece0" fill-opacity=".08" stroke="#d9f5e8" stroke-opacity=".55"/>
+              <circle cx="156" cy="112" r="11" fill="#c6ece0" fill-opacity=".12" stroke="#d9f5e8" stroke-opacity=".4"/>
+              <circle cx="524" cy="205" r="16" fill="#c6ece0" fill-opacity=".12" stroke="#d9f5e8" stroke-opacity=".45"/>
+              <path d="M92 356c105 19 338 19 455-1" fill="none" stroke="url(#ground-glow)" stroke-linecap="round" stroke-width="3"/>
+              <path d="M106 287c23-9 49-18 77-24l48-69c13-18 33-28 55-28h95c22 0 41 9 55 27l52 67c26 4 46 12 61 24 11 9 18 23 18 38v23c0 11-9 20-20 20h-27c-5-31-30-54-61-54s-56 23-61 54H242c-5-31-30-54-61-54s-56 23-61 54h-23c-11 0-20-9-20-20v-27c0-14 9-27 29-31Z" fill="url(#car-paint)" stroke="#fffde9" stroke-opacity=".68" stroke-width="2"/>
+              <path d="m248 202-42 61h126v-68h-43c-17 0-31 2-41 7Zm99-7v68h126l-45-57c-10-8-21-11-36-11h-45Z" fill="url(#window-glass)" stroke="#f8f6df" stroke-opacity=".7" stroke-width="3"/>
+              <path d="M337 195v68" stroke="#f8f6df" stroke-opacity=".8" stroke-width="3"/>
+              <path d="M106 290c56-11 125-14 207-14 112 0 197 8 264 25" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width="3"/>
+              <path d="M94 320h39m386 0h44" stroke="#f5d686" stroke-linecap="round" stroke-width="7"/>
+              <path d="M100 332h26m426 0h24" stroke="#fff" stroke-linecap="round" stroke-opacity=".8" stroke-width="4"/>
+              <circle cx="181" cy="342" r="41" fill="#18241f" stroke="#dce6d0" stroke-width="6"/>
+              <circle cx="181" cy="342" r="22" fill="#9bad8c"/>
+              <circle cx="181" cy="342" r="9" fill="#314338"/>
+              <circle cx="459" cy="342" r="41" fill="#18241f" stroke="#dce6d0" stroke-width="6"/>
+              <circle cx="459" cy="342" r="22" fill="#9bad8c"/>
+              <circle cx="459" cy="342" r="9" fill="#314338"/>
+              <path d="m140 292-13 12m8 15 14 2m327-29 12 12m-7 15-14 2" fill="none" stroke="#fff" stroke-linecap="round" stroke-opacity=".65" stroke-width="3"/>
+              <path d="m226 160 8-20m167 20 9-18" fill="none" stroke="#d7fb68" stroke-linecap="round" stroke-width="5"/>
+            </svg>
+            <aside class="hero-card" aria-label="Цена обычной внешней мойки">
+              <p class="hero-card-label">Обычная внешняя мойка</p>
+              <p class="hero-card-price">1 200 ₽</p>
+              <p class="hero-card-service">Подробный прайс — ниже</p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section id="services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Прайс</p>
+            <h2 id="services-title">Услуги и цены</h2>
+          </div>
+          <p class="section-note">Выберите карточку — и услуга добавится в заявку.</p>
+        </div>
+
+        <div class="services">
+          <article class="service" data-service="exterior" role="button" tabindex="0" aria-pressed="false">
+            <span class="service-number" aria-hidden="true">01</span>
+            <h3>Обычная внешняя мойка</h3>
+            <p class="price">1 200 ₽</p>
+            <span class="service-prompt">Выбрать услугу →</span>
+          </article>
+          <article class="service" data-service="interior" role="button" tabindex="0" aria-pressed="false">
+            <span class="service-number" aria-hidden="true">02</span>
+            <h3>Мойка салона</h3>
+            <p class="price">2 400 ₽</p>
+            <span class="service-prompt">Выбрать услугу →</span>
+          </article>
+          <article class="service" data-service="polishing" role="button" tabindex="0" aria-pressed="false">
+            <span class="service-number" aria-hidden="true">03</span>
+            <h3>Полировка</h3>
+            <p class="price">от 4 000 ₽</p>
+            <span class="service-prompt">Выбрать услугу →</span>
+          </article>
+          <article class="service" data-service="ceramic" role="button" tabindex="0" aria-pressed="false">
+            <span class="service-number" aria-hidden="true">04</span>
+            <h3>Покрытие керамикой</h3>
+            <p class="price">от 20 000 ₽</p>
+            <span class="service-prompt">Выбрать услугу →</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="booking" id="booking" aria-labelledby="booking-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Заявка</p>
+            <h2 id="booking-title">Запись на услугу</h2>
+          </div>
+          <p class="section-note">Выберите услугу и время — заявка откроется в Telegram.</p>
+        </div>
+
+        <form class="booking-form" id="booking-form">
+          <label class="form-field">
+            Услуга
+            <select class="form-input" name="service" required>
+              <option value="" selected disabled>Выберите услугу</option>
+              <option value="exterior">Обычная внешняя мойка</option>
+              <option value="interior">Мойка салона</option>
+              <option value="polishing">Полировка</option>
+              <option value="ceramic">Покрытие керамикой</option>
+            </select>
+          </label>
+          <label class="form-field">
+            Имя клиента
+            <input class="form-input" name="client" autocomplete="name" required>
+          </label>
+          <label class="form-field">
+            Телефон клиента
+            <input class="form-input" name="phone" type="tel" autocomplete="tel" required>
+          </label>
+          <label class="form-field">
+            Желаемая дата
+            <input class="form-input" name="date" type="date" required>
+          </label>
+          <label class="form-field">
+            Желаемое время
+            <input class="form-input" name="time" type="time" required>
+          </label>
+          <p class="booking-price" id="booking-price" aria-live="polite">Выберите услугу, чтобы увидеть цену</p>
+          <p class="booking-note">
+            Telegram откроется с готовым сообщением Дмитрию. Проверьте заявку и нажмите
+            «Отправить» в Telegram — сайт не отправляет её автоматически.
+          </p>
+          <button class="button" type="submit">Подготовить заявку в Telegram</button>
+        </form>
+      </section>
+
+      <section class="contact" id="contacts" aria-label="Контакты и адрес">
+        <article class="contact-card">
+          <p class="contact-detail">Связаться</p>
+          <h2>Есть вопрос?</h2>
+          <p class="contact-value">Telegram: @Dmitryi_cs</p>
+          <a class="button" href="https://t.me/Dmitryi_cs" target="_blank" rel="noopener noreferrer">
+            Написать в Telegram
+          </a>
+        </article>
+
+        <article class="contact-card contact-card-light">
+          <p class="contact-detail">Мы находимся</p>
+          <h2>Адрес</h2>
+          <p class="contact-value">Новороссийск, улица Видова, 146</p>
+          <a
+            class="button"
+            href="https://yandex.ru/maps/?text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D0%B8%D0%B4%D0%BE%D0%B2%D0%B0%2C%20146"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Открыть карту
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">Автомойка «Волна» · Новороссийск</div>
+    </footer>
+    <a class="mobile-booking" href="#booking">Записаться <span aria-hidden="true">↗</span></a>
+    <script>
+      document.documentElement.classList.add("js");
+      const bookingForm = document.querySelector("#booking-form");
+      const bookingDate = bookingForm.elements.date;
+      const serviceSelect = bookingForm.elements.service;
+      const bookingPrice = document.querySelector("#booking-price");
+      const services = new Map([
+        ["exterior", { name: "Обычная внешняя мойка", price: "1 200 ₽" }],
+        ["interior", { name: "Мойка салона", price: "2 400 ₽" }],
+        ["polishing", { name: "Полировка", price: "от 4 000 ₽" }],
+        ["ceramic", { name: "Покрытие керамикой", price: "от 20 000 ₽" }],
+      ]);
+
+      const selectService = (serviceId) => {
+        const service = services.get(serviceId);
+        if (!service) return;
+
+        serviceSelect.value = serviceId;
+        bookingPrice.textContent = `${service.name} — ${service.price}`;
+        document.querySelectorAll(".service[data-service]").forEach((card) => {
+          card.setAttribute("aria-pressed", String(card.dataset.service === serviceId));
+        });
+      };
+
+      document.querySelectorAll(".service[data-service]").forEach((card) => {
+        card.addEventListener("click", () => selectService(card.dataset.service));
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectService(card.dataset.service);
+          }
+        });
+      });
+
+      serviceSelect.addEventListener("change", () => selectService(serviceSelect.value));
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll("#services, .service, .booking, .contact-card").forEach((element, index) => {
+          element.classList.add("reveal");
+          if (element.classList.contains("service")) {
+            element.style.transitionDelay = `${(index % 4) * 70}ms`;
+          }
+          revealObserver.observe(element);
+        });
+      }
+
+      bookingDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 10);
+
+      bookingForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(bookingForm);
+        const message = [
+          "Заявка на запись в автомойку «Волна»",
+          `Услуга: ${services.get(formData.get("service")).name}`,
+          `Клиент: ${formData.get("client")}`,
+          `Телефон: ${formData.get("phone")}`,
+          `Дата: ${formData.get("date")}`,
+          `Время: ${formData.get("time")}`,
+        ].join("\n");
+
+        window.location.assign(`https://t.me/Dmitryi_cs?text=${encodeURIComponent(message)}`);
+      });
+    </script>
+  </body>
+</html>
