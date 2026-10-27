@@ -1397,7 +1397,12 @@
           min-height: 63px;
           border-radius: 13px;
         }
+      }
 
+      @media (display-mode: standalone) {
+        body {
+          padding-top: env(safe-area-inset-top);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1727,8 +1732,15 @@
       const openAssistant = () => openModal(assistantModal, chatInput);
       const openBooking = () => {
         bookingState.step = 1;
+        bookingState.service = null;
+        bookingState.date = "";
+        bookingState.time = "";
+        bookingState.name = "";
+        bookingState.phone = "";
+        bookingState.vehicle = "";
+        customDate = "";
         renderBooking();
-        openModal(bookingModal);
+        openModal(bookingModal, bookingContent.querySelector(".wizard-service"));
       };
 
       document.querySelectorAll("[data-open-assistant]").forEach((button) => {
@@ -1779,7 +1791,7 @@
 
       const responses = {
         services: "У нас есть четыре услуги:\n• Обычная внешняя мойка — 1 200 ₽\n• Мойка салона — 2 400 ₽\n• Полировка — от 4 000 ₽\n• Покрытие керамикой — от 20 000 ₽\n\nВыберите услугу в форме записи, чтобы отправить запрос Дмитрию.",
-        time: "Заполните заявку: выберите услугу, желаемые дату и время и оставьте имя с телефоном. Заявка откроется в Telegram для отправки Дмитрию. Время нужно будет подтвердить в ответном сообщении.",
+        time: "Заполните заявку: выберите услугу, желаемые дату и время и оставьте имя с телефоном. Мы не показываем онлайн-расписание, поэтому Дмитрий подтвердит удобное время ответным сообщением в Telegram.",
         address: "Автомойка «Волна»: Новороссийск, улица Видова, 146. Кнопка «Маршрут» откроет адрес на карте.",
         hours: "Часы работы пока не указаны. Уточните удобное время у Дмитрия в Telegram: @Dmitryi_cs.",
         thanks: "Спасибо, что написали! По записи и наличию свободного времени напишите напрямую Дмитрию в Telegram: @Dmitryi_cs.",
