@@ -777,6 +777,21 @@
         overscroll-behavior: contain;
       }
 
+      .booking-dialog {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .booking-dialog .dialog-grab,
+      .booking-dialog .dialog-header {
+        flex: 0 0 auto;
+      }
+
+      .booking-dialog .booking-content {
+        min-height: 0;
+        flex: 1 1 auto;
+      }
+
       .progress-bars {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -1381,7 +1396,7 @@
         .assistant-dialog,
         .booking-dialog {
           width: 100%;
-          max-height: min(88dvh, 820px);
+          max-height: calc(var(--visual-viewport-height, 100dvh) - env(safe-area-inset-top) - 8px);
           border-radius: 26px 26px 18px 18px;
         }
 
@@ -1390,13 +1405,19 @@
           padding: 0;
         }
 
+        .booking-backdrop {
+          top: var(--visual-viewport-offset-top, 0px);
+          height: var(--visual-viewport-height, 100dvh);
+          bottom: auto;
+        }
+
         .assistant-body {
           max-height: 42dvh;
           min-height: 215px;
         }
 
         .booking-content {
-          max-height: calc(min(88dvh, 820px) - 74px);
+          max-height: none;
           padding-inline: 16px;
         }
 
@@ -1670,6 +1691,15 @@
       const chatInput = document.querySelector("#chat-input");
       let previousFocus = null;
       let customDate = "";
+
+      const updateVisualViewport = () => {
+        if (!window.visualViewport) return;
+        document.documentElement.style.setProperty("--visual-viewport-height", `${window.visualViewport.height}px`);
+        document.documentElement.style.setProperty("--visual-viewport-offset-top", `${window.visualViewport.offsetTop}px`);
+      };
+      updateVisualViewport();
+      window.visualViewport?.addEventListener("resize", updateVisualViewport);
+      window.visualViewport?.addEventListener("scroll", updateVisualViewport);
 
       const openModal = (modal, focusTarget) => {
         previousFocus = document.activeElement;
@@ -1965,7 +1995,7 @@
           bookingState.time = preferredTime.value;
           bookingState.step = 3;
           renderBooking();
-          bookingContent.querySelector('[name="name"]')?.focus({ preventScroll: true });
+          bookingContent.querySelector('[name="name"]')?.focus();
         });
 
         bookingContent.querySelector("#customer-form")?.addEventListener("submit", (event) => {
