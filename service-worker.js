@@ -1,4 +1,4 @@
-const CACHE_NAME = "volna-site-v9";
+const CACHE_NAME = "volna-site-v10";
 const APP_ASSETS = [
   "./",
   "./index.html",

@@ -2039,9 +2039,8 @@
             "",
             "Прошу подтвердить возможность записи.",
           ].join("\n");
-          const directMessageUrl = new URL("https://t.me/Dmitryi_cs");
-          directMessageUrl.searchParams.set("text", message);
-          window.location.assign(directMessageUrl.toString());
+          const directMessageUrl = `https://t.me/Dmitryi_cs?text=${encodeURIComponent(message)}`;
+          window.location.assign(directMessageUrl);
         });
       };
 
