@@ -1929,7 +1929,7 @@
 
       const renderReviewStep = () => `
         ${renderProgress(4)}
-        <p class="step-caption">Проверьте заявку. Telegram откроется только после нажатия «Отправить заявку».</p>
+        <p class="step-caption">Проверьте заявку. В Telegram выберите Дмитрия и нажмите «Отправить».</p>
         <article class="review-card">
           <h3>${bookingState.service.name}</h3>
           <div class="review-row"><span>Желаемая дата</span><strong>${dateFormatter.format(parseLocalDate(bookingState.date))}</strong></div>
@@ -1941,7 +1941,7 @@
         </article>
         <label class="review-consent"><input id="consent" type="checkbox" required><span>Согласен передать указанные данные Дмитрию через Telegram для ответа на заявку.</span></label>
         <p class="step-hint">Запись не подтверждена до ответа автомойки. «Волна» не сохраняет данные на этом сайте.</p>
-        <div class="wizard-buttons"><button class="back-button" type="button" data-back>← Назад</button><button class="primary-action" type="button" data-send>Отправить заявку <span aria-hidden="true">↗</span></button></div>`;
+        <div class="wizard-buttons"><button class="back-button" type="button" data-back>← Назад</button><button class="primary-action" type="button" data-send>Продолжить в Telegram <span aria-hidden="true">↗</span></button></div>`;
 
       const parseLocalDate = (value) => {
         const [year, month, day] = value.split("-").map(Number);
@@ -2039,7 +2039,10 @@
             "",
             "Прошу подтвердить возможность записи.",
           ].join("\n");
-          window.location.assign(`https://t.me/Dmitryi_cs?text=${encodeURIComponent(message)}`);
+          const shareUrl = new URL("https://t.me/share/url");
+          shareUrl.searchParams.set("url", "https://floodsmithplug.github.io/biznes-moyka/");
+          shareUrl.searchParams.set("text", message);
+          window.location.assign(shareUrl.toString());
         });
       };
 
