@@ -172,7 +172,7 @@
       }
 
       main {
-        padding: 28px 0 70px;
+        padding: 28px 0 104px;
       }
 
       .cover {
@@ -1030,6 +1030,43 @@
         transition: transform 170ms ease, border-color 170ms ease;
       }
 
+      .booking-fab {
+        position: fixed;
+        z-index: 7;
+        bottom: 20px;
+        left: max(20px, calc((100vw - 1000px) / 2));
+        display: flex;
+        width: min(240px, calc(100vw - 40px));
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 20px;
+        border: 1px solid rgb(158 208 255 / 54%);
+        border-radius: 999px;
+        background: linear-gradient(110deg, #5caaff, #398dea);
+        color: #071726;
+        font-size: 14px;
+        font-weight: 760;
+        box-shadow: 0 10px 32px rgb(0 0 0 / 32%), 0 0 24px rgb(74 156 245 / 22%);
+        cursor: pointer;
+        transition: transform 170ms ease, box-shadow 170ms ease;
+      }
+
+      .booking-fab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 13px 36px rgb(0 0 0 / 36%), 0 0 28px rgb(74 156 245 / 30%);
+      }
+
+      .booking-fab:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+      }
+
+      .booking-fab span:last-child {
+        font-size: 19px;
+      }
+
       .assistant-link:hover {
         transform: translateY(-2px);
         border-color: rgb(139 197 255 / 65%);
@@ -1156,7 +1193,7 @@
         }
 
         main {
-          padding: 13px 0 calc(82px + env(safe-area-inset-bottom));
+          padding: 13px 0 calc(104px + env(safe-area-inset-bottom));
         }
 
         .cover {
@@ -1327,10 +1364,18 @@
 
         .assistant-link {
           right: 13px;
-          bottom: calc(13px + env(safe-area-inset-bottom));
+          bottom: calc(78px + env(safe-area-inset-bottom));
           min-height: 47px;
           padding: 0 15px;
           font-size: 12px;
+        }
+
+        .booking-fab {
+          right: 14px;
+          bottom: calc(12px + env(safe-area-inset-bottom));
+          left: 14px;
+          width: auto;
+          min-height: 50px;
         }
 
         .assistant-dialog,
@@ -1509,6 +1554,10 @@
 
       <footer class="footer">Автомойка «Волна» · Новороссийск</footer>
     </main>
+
+    <button class="booking-fab" type="button" data-open-booking>
+      <span>Записаться</span><span aria-hidden="true">↗</span>
+    </button>
 
     <button class="assistant-link" id="assistant-fab" type="button" data-open-assistant>
       <span class="assistant-icon" aria-hidden="true">
