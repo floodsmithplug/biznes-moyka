@@ -1,4 +1,4 @@
-const CACHE_NAME = "volna-site-v2";
+const CACHE_NAME = "volna-site-v3";
 const APP_ASSETS = [
   "./",
   "./index.html",
@@ -6,7 +6,7 @@ const APP_ASSETS = [
   "./icon.svg",
   "./icon-180.png",
   "./icon-512.png",
-  "./mustang-hero.jpg",
+  "./mustang-hero.png",
 ];
 
 self.addEventListener("install", (event) => {

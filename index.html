@@ -229,16 +229,15 @@
 
       .cover-photo {
         position: absolute;
-        top: 11%;
+        top: 2%;
         left: 50%;
-        width: min(92%, 720px);
-        height: 72%;
-        border: 1px solid rgb(255 255 255 / 13%);
-        border-radius: 17px;
-        object-fit: cover;
-        object-position: center 54%;
-        box-shadow: 0 24px 55px rgb(0 0 0 / 32%);
+        width: min(98%, 980px);
+        height: 96%;
+        object-fit: contain;
+        object-position: center;
+        filter: drop-shadow(0 18px 26px rgb(0 0 0 / 36%));
         transform: translateX(-50%);
+        animation: car-hover 6s ease-in-out infinite;
       }
 
       @keyframes car-hover {
@@ -1134,10 +1133,9 @@
         }
 
         .cover-photo {
-          top: 11%;
-          width: 92%;
-          height: 72%;
-          border-radius: 14px;
+          top: 3%;
+          width: 98%;
+          height: 92%;
         }
 
         .intro {
@@ -1225,10 +1223,9 @@
         }
 
         .cover-photo {
-          top: 8%;
-          width: 94%;
-          height: 74%;
-          border-radius: 12px;
+          top: 5%;
+          width: 98%;
+          height: 86%;
         }
 
         .cover-content {
@@ -1535,7 +1532,7 @@
             </g>
             <path d="M70 111c12-12 24-12 36 0m-18-22v44M660 96c9-9 18-9 27 0m-13-15v30" fill="none" stroke="#84c9ff" stroke-opacity=".5" stroke-linecap="round" stroke-width="2"/>
           </svg>
-          <img class="cover-photo" src="./mustang-hero.jpg" alt="Чёрный Mustang — автомобиль автомойки «Волна»">
+          <img class="cover-photo" src="./mustang-hero.png" alt="Чёрный Mustang с серыми полосами">
           <div class="cover-content">
             <span class="cover-caption">Новороссийск · Видова, 146</span>
             <a class="cover-book" href="#booking"><span>Записаться</span><span aria-hidden="true">↗</span></a>
