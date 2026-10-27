@@ -187,35 +187,6 @@
         box-shadow: 0 28px 80px rgb(0 0 0 / 24%), inset 0 1px rgb(255 255 255 / 6%);
       }
 
-      .cover::after {
-        position: absolute;
-        right: 12%;
-        bottom: -43%;
-        width: 76%;
-        aspect-ratio: 1;
-        border: 1px solid rgb(105 173 248 / 22%);
-        border-radius: 50%;
-        box-shadow:
-          0 0 0 19px rgb(105 173 248 / 4%),
-          0 0 0 52px rgb(105 173 248 / 4%),
-          0 0 0 88px rgb(105 173 248 / 3%);
-        content: "";
-        pointer-events: none;
-      }
-
-      .cover-wash {
-        position: absolute;
-        top: 6%;
-        left: 50%;
-        width: min(74%, 600px);
-        height: 64%;
-        border: 1px solid rgb(120 185 255 / 18%);
-        border-radius: 50%;
-        background: radial-gradient(ellipse, rgb(74 156 245 / 20%), transparent 65%);
-        box-shadow: 0 0 42px rgb(74 156 245 / 13%);
-        transform: translateX(-50%);
-      }
-
       .cover-photo {
         position: absolute;
         top: 2%;
@@ -1193,12 +1164,6 @@
           border-radius: 20px;
         }
 
-        .cover-wash {
-          top: 8%;
-          width: 83%;
-          height: 58%;
-        }
-
         .cover-photo {
           top: 5%;
           width: 98%;
@@ -1453,7 +1418,6 @@
     <main class="shell" id="top">
       <div class="hero-layout">
         <section class="cover" aria-label="Автомойка Волна">
-          <div class="cover-wash"></div>
           <img class="cover-photo" src="./mustang-hero.png" alt="Чёрный Mustang с серыми полосами">
           <div class="cover-content">
             <span class="cover-caption">Новороссийск · Видова, 146</span>
