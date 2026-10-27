@@ -216,17 +216,6 @@
         transform: translateX(-50%);
       }
 
-      .cover-car {
-        position: absolute;
-        top: 4%;
-        left: 50%;
-        width: min(80%, 710px);
-        height: 83%;
-        transform: translateX(-50%);
-        filter: drop-shadow(0 30px 36px rgb(0 0 0 / 40%));
-        animation: car-hover 6s ease-in-out infinite;
-      }
-
       .cover-photo {
         position: absolute;
         top: 2%;
@@ -1126,12 +1115,6 @@
           min-height: 490px;
         }
 
-        .cover-car {
-          top: 8%;
-          width: 112%;
-          height: 75%;
-        }
-
         .cover-photo {
           top: 3%;
           width: 98%;
@@ -1214,12 +1197,6 @@
           top: 8%;
           width: 83%;
           height: 58%;
-        }
-
-        .cover-car {
-          top: 3%;
-          width: 96%;
-          height: 82%;
         }
 
         .cover-photo {
@@ -1477,61 +1454,6 @@
       <div class="hero-layout">
         <section class="cover" aria-label="Автомойка Волна">
           <div class="cover-wash"></div>
-          <svg class="cover-car" hidden viewBox="0 0 760 400" role="img" aria-labelledby="car-title car-desc">
-            <title id="car-title">Автомобиль в сиянии воды</title>
-            <desc id="car-desc">Стилизованный автомобиль на синем фоне в авторской иллюстрации автомойки «Волна».</desc>
-            <defs>
-              <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#21374e"/>
-                <stop offset=".55" stop-color="#0d1b2b"/>
-                <stop offset="1" stop-color="#152a40"/>
-              </linearGradient>
-              <linearGradient id="body" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="#51677c"/>
-                <stop offset=".23" stop-color="#293b50"/>
-                <stop offset=".58" stop-color="#101e2d"/>
-                <stop offset="1" stop-color="#243448"/>
-              </linearGradient>
-              <linearGradient id="rim" x1="0" x2="1">
-                <stop stop-color="#5a7187"/>
-                <stop offset=".5" stop-color="#e4eef8"/>
-                <stop offset="1" stop-color="#64798e"/>
-              </linearGradient>
-              <radialGradient id="lamp">
-                <stop stop-color="#8bd0ff"/>
-                <stop offset=".5" stop-color="#398fe7"/>
-                <stop offset="1" stop-color="#1265bd" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="9"/>
-              </filter>
-            </defs>
-            <ellipse cx="382" cy="342" rx="291" ry="20" fill="#030b14" opacity=".8"/>
-            <ellipse cx="377" cy="323" rx="260" ry="8" fill="#66b6ff" opacity=".33" filter="url(#glow)"/>
-            <path d="M82 282c13-34 46-58 89-72l77-91c20-24 47-37 79-39l138-4c36 0 66 13 89 39l61 74c44 8 76 25 94 48 10 12 16 28 16 45v22c0 12-10 22-22 22h-62c-4-48-36-80-81-80s-77 32-81 80H302c-4-48-36-80-81-80s-77 32-81 80H99c-15 0-27-12-27-27v-1c0-7 3-13 10-16Z" fill="url(#body)" stroke="#8195a8" stroke-opacity=".8" stroke-width="3"/>
-            <path d="m253 131-69 82c35-12 94-18 159-19v-113l-10 1c-32 3-60 19-80 49Zm111-52v115c70 0 149 5 228 20l-75-86c-17-20-42-34-72-38-27-4-52-7-81-9Z" fill="url(#glass)" stroke="#657d93" stroke-width="4"/>
-            <path d="M357 77v117" stroke="#8297aa" stroke-opacity=".55" stroke-width="5"/>
-            <path d="M94 264c115-28 347-28 610 2" fill="none" stroke="#adc1d4" stroke-opacity=".45" stroke-width="4"/>
-            <path d="M126 248c12-23 27-35 45-39l38 8c5 1 7 6 5 11l-11 24c-3 6-9 10-16 10h-50c-11 0-17-6-11-14Zm490-30 47-4c18 1 34 14 43 37 2 7-3 12-12 12h-52c-8 0-14-4-18-11l-14-22c-4-6-1-11 6-12Z" fill="url(#lamp)" opacity=".9" filter="url(#glow)"/>
-            <path d="M130 248c12-23 27-35 45-39l38 8c5 1 7 6 5 11l-11 24c-3 6-9 10-16 10h-50c-11 0-17-6-11-14Zm490-30 47-4c18 1 34 14 43 37 2 7-3 12-12 12h-52c-8 0-14-4-18-11l-14-22c-4-6-1-11 6-12Z" fill="#14273b" stroke="#607e9a" stroke-width="3"/>
-            <path d="M145 245h58m449-21 38-5" stroke="#8fd0ff" stroke-linecap="round" stroke-width="6" filter="url(#glow)"/>
-            <path d="M145 245h58m449-21 38-5" stroke="#98d7ff" stroke-linecap="round" stroke-width="3"/>
-            <path d="M265 291h236" stroke="#91abc0" stroke-opacity=".4" stroke-width="3"/>
-            <path d="M357 286c0 9 10 16 23 16s23-7 23-16" fill="none" stroke="#d7e5f1" stroke-opacity=".6" stroke-width="2"/>
-            <circle cx="225" cy="300" r="55" fill="#07111c" stroke="#8295a8" stroke-width="6"/>
-            <circle cx="225" cy="300" r="37" fill="#17283a" stroke="url(#rim)" stroke-width="7"/>
-            <circle cx="225" cy="300" r="17" fill="#61778b"/>
-            <circle cx="225" cy="300" r="7" fill="#0d1926"/>
-            <circle cx="569" cy="300" r="55" fill="#07111c" stroke="#8295a8" stroke-width="6"/>
-            <circle cx="569" cy="300" r="37" fill="#17283a" stroke="url(#rim)" stroke-width="7"/>
-            <circle cx="569" cy="300" r="17" fill="#61778b"/>
-            <circle cx="569" cy="300" r="7" fill="#0d1926"/>
-            <g fill="#d6eaff" opacity=".75">
-              <circle cx="129" cy="125" r="3"/><circle cx="171" cy="96" r="2"/><circle cx="615" cy="126" r="3"/>
-              <circle cx="651" cy="157" r="2"/><circle cx="102" cy="183" r="2"/><circle cx="699" cy="205" r="2"/>
-            </g>
-            <path d="M70 111c12-12 24-12 36 0m-18-22v44M660 96c9-9 18-9 27 0m-13-15v30" fill="none" stroke="#84c9ff" stroke-opacity=".5" stroke-linecap="round" stroke-width="2"/>
-          </svg>
           <img class="cover-photo" src="./mustang-hero.png" alt="Чёрный Mustang с серыми полосами">
           <div class="cover-content">
             <span class="cover-caption">Новороссийск · Видова, 146</span>
