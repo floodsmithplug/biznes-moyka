@@ -2039,8 +2039,21 @@
             "",
             "Прошу подтвердить возможность записи.",
           ].join("\n");
-          const directMessageUrl = `https://t.me/Dmitryi_cs?text=${encodeURIComponent(message)}`;
-          window.location.assign(directMessageUrl);
+          const encodedMessage = encodeURIComponent(message);
+          const appUrl = `tg://resolve?domain=Dmitryi_cs&text=${encodedMessage}`;
+          const webUrl = `https://t.me/Dmitryi_cs?text=${encodedMessage}`;
+          let appOpened = false;
+          const markAppOpened = () => {
+            appOpened = true;
+          };
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) markAppOpened();
+          }, { once: true });
+          window.addEventListener("pagehide", markAppOpened, { once: true });
+          window.setTimeout(() => {
+            if (!appOpened && !document.hidden) window.location.assign(webUrl);
+          }, 2000);
+          window.location.assign(appUrl);
         });
       };
 
@@ -2065,9 +2078,15 @@
 
       if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./service-worker.js").catch((error) => {
-            console.error("Не удалось включить автономный режим сайта:", error);
-          });
+          const hadController = Boolean(navigator.serviceWorker.controller);
+          if (hadController) {
+            navigator.serviceWorker.addEventListener("controllerchange", () => window.location.reload(), { once: true });
+          }
+          navigator.serviceWorker.register("./service-worker.js", { updateViaCache: "none" })
+            .then((registration) => registration.update())
+            .catch((error) => {
+              console.error("Не удалось включить автономный режим сайта:", error);
+            });
         });
       }
     </script>
