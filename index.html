@@ -2049,6 +2049,7 @@
           document.addEventListener("visibilitychange", () => {
             if (document.hidden) markAppOpened();
           }, { once: true });
+          window.addEventListener("blur", markAppOpened, { once: true });
           window.addEventListener("pagehide", markAppOpened, { once: true });
           window.setTimeout(() => {
             if (!appOpened && !document.hidden) window.location.assign(webUrl);
